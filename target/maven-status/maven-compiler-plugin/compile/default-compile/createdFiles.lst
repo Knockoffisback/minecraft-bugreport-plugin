@@ -1,0 +1,7 @@
+com\yourname\bugreport\session\BugSession.class
+com\yourname\bugreport\commands\DiscordListener$1.class
+com\yourname\bugreport\BugReporterPlugin$1.class
+com\yourname\bugreport\commands\DiscordListener.class
+com\yourname\bugreport\commands\BugCommand.class
+com\yourname\bugreport\BugReporterPlugin.class
+com\yourname\bugreport\session\BugData.class
