@@ -2,10 +2,10 @@ package com.yourname.bugreport;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.yourname.bugreport.commands.DiscordListener;
+import com.yourname.bugreport.listeners.DiscordListener;
 import com.yourname.bugreport.commands.BugCommand;
-import com.yourname.bugreport.session.BugData;
-import com.yourname.bugreport.session.BugSession;
+import com.yourname.bugreport.sessions.BugData;
+import com.yourname.bugreport.sessions.BugSession;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Guild;
@@ -26,7 +26,7 @@ public class BugReporterPlugin extends JavaPlugin {
     public static BugReporterPlugin INSTANCE;
 
     public JDA jda;
-    public final Map<String, BugSession> sessions = new HashMap<>();
+    public Map<String, BugSession> sessions = new HashMap<>();
     public Map<String, BugData> localBugs = new HashMap<>();
 
     private File dataFile;
@@ -48,12 +48,10 @@ public class BugReporterPlugin extends JavaPlugin {
         jda = JDABuilder.createDefault(token)
                 .addEventListeners(new DiscordListener())
                 .build();
-
-        // ---- NEW: register per-guild slash-commands for immediate availability ----
         try {
             jda.awaitReady();  // wait until JDA is fully loaded
 
-            // **Replace** with your own test-server’s ID
+            // Replace with your own test-server's ID
             String guildId = "1176946631690686474";
             Guild guild = jda.getGuildById(guildId);
             if (guild == null) {

@@ -1,7 +1,7 @@
 name: BugReportPlugin
 version: 1.0
 main: com.yourname.bugreport.BugReporterPlugin
-api-version: 1.19
+api-version: 1.21.4
 commands:
   bug:
     description: Start a bug report questionnaire.

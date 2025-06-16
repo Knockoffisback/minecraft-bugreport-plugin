@@ -1,4 +1,4 @@
-package com.yourname.bugreport.session;
+package com.yourname.bugreport.sessions;
 
 import java.util.ArrayList;
 import java.util.List;
