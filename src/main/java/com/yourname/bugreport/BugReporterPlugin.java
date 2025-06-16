@@ -12,6 +12,7 @@ import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import org.bukkit.plugin.java.JavaPlugin;
+import com.yourname.bugreport.utils.MenuUtil;
 
 import java.io.File;
 import java.io.FileReader;
@@ -25,6 +26,7 @@ import java.util.Map;
 public class BugReporterPlugin extends JavaPlugin {
     public static BugReporterPlugin INSTANCE;
 
+
     public JDA jda;
     public Map<String, BugSession> sessions = new HashMap<>();
     public Map<String, BugData> localBugs = new HashMap<>();
@@ -34,6 +36,7 @@ public class BugReporterPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        MenuUtil.initialize(this);
         INSTANCE = this;
 
         // Load config
